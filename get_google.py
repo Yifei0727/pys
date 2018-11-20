@@ -23,7 +23,7 @@ def gen_range(asn):
         for tr in table.find_all('tr'):
             tds = tr.find_all('td')
             if tds:
-                cidr_range.append(tds[0].text)
+                cidr_range.append(tds[0].text.replace(' ','').replace('\n', '').replace('\t', ''))
     return cidr_range
 
 
